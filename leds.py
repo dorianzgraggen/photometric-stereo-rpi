@@ -1,5 +1,6 @@
 # based of https://github.com/rpi-ws281x/rpi-ws281x-python/blob/master/examples/strandtest.py
 
+devMode = False
 try:
     from rpi_ws281x import PixelStrip, Color
 except ImportError:
