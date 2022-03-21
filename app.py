@@ -33,6 +33,7 @@ if not devMode:
 
 
 def set_color(strip, color):
+    if devMode: return
     for i in range(strip.numPixels()):
         strip.setPixelColor(i, color)
         strip.show()
@@ -53,16 +54,16 @@ async def start(uri):
 
             if (msg == "start"):
                 print("shining")
-                if not devMode:
-                    color = Color(255, 255, 255)
+                set_color(strip, Color(255, 255, 255))
+            
+            elif msg == "show_id":
+                print("showing id")
+                set_color(strip, Color(255, 0, 255))
 
             elif msg == "stop":
                 print("stopping")
-                if not devMode:
-                    color = Color(0, 0, 0)
+                set_color(strip, Color(0, 0, 0))
 
-            if not devMode:
-                set_color(strip, color)
 
 
 asyncio.run(start("ws://192.168.1.99:8080"))
