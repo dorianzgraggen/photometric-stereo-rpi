@@ -65,4 +65,4 @@ async def start(uri):
                 set_color(strip, color)
 
 
-asyncio.run(start("ws://192.168.137.1:8080"))
+asyncio.run(start("ws://192.168.1.99:8080"))
